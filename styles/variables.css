@@ -8,4 +8,7 @@
   --card-title-weight: 700;
   --theme-bgc-color: #fff;
   --accent-color: #000;
+  --bgc-gradient-start: #e7e7e7;
+  --bgc-gradient-end: #1a1a1a;
+  --gradient-line: #d3d3d3;
 }
