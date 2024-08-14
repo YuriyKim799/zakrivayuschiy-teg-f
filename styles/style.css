@@ -46,6 +46,7 @@
 }
 
 .header {
+  margin: 0 auto;
   background-color: var(--theme-bgc-color);
   font-family: var(--accent-font);
   text-transform: uppercase;
@@ -54,6 +55,7 @@
   display: flex;
   justify-content: center;
   border: 2px solid var(--accent-color);
+  width: clamp(375px, 80%, 700px);
 }
 
 .header__theme-menu {
@@ -110,4 +112,36 @@
 .theme-menu__button:hover {
   cursor: pointer;
   opacity: 60%;
+}
+
+.content {
+  margin: 0 auto;
+  background-color: var(--theme-bgc-color);
+  width: clamp(375px, 80%, 700px);
+  
+}
+
+.card-title {
+  font-weight: var(--card-title-weight);
+  font-size: 18px;
+  line-height: 21.78px;
+  padding: 3px 10px 3px 10px;
+  border: 2px solid var(--accent-color);
+}
+
+.card-image__wrap {
+  border: none;
+  outline: none;
+  position: relative;
+}
+
+.card-label {
+  top: 25px;
+  right: 25px;
+  position: absolute;
+}
+
+.card-image {
+  width: 100%;
+  border-left: 2px solid var(--accent-color);
 }
