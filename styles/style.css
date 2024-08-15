@@ -21,6 +21,8 @@
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
   font-variation-settings: var(--card-text-weight);
+  font-size: 14px;
+  line-height: 14px;
   background-color: var(--theme-bgc-color);
   color: var(--accent-color);
   background-attachment: fixed;
@@ -94,7 +96,7 @@
   position: absolute;
   width: 14px;
   height: 14px;
-  margin-inline-start: 20px;
+  margin-inline-start: 6px;
   margin-block-start: 1px;
 }
 
@@ -106,7 +108,8 @@
 .theme-menu__button {
   background-color: transparent;
   border: none;
-  margin-inline-start: 34px;
+  margin-inline-start: 20px;
+  text-transform: uppercase;
 }
 
 .theme-menu__button:hover {
@@ -118,7 +121,10 @@
   margin: 0 auto;
   background-color: var(--theme-bgc-color);
   width: clamp(375px, 80%, 700px);
-  
+}
+
+.card {
+  border: 2px solid var(--accent-color);
 }
 
 .card-title {
@@ -126,22 +132,38 @@
   font-size: 18px;
   line-height: 21.78px;
   padding: 3px 10px 3px 10px;
-  border: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
 }
 
 .card-image__wrap {
-  border: none;
-  outline: none;
   position: relative;
 }
 
 .card-label {
   top: 25px;
   right: 25px;
+  color: var(--accent-color);
+  font-family: var(--accent-font), sans-serif;
+  text-transform: uppercase;
   position: absolute;
+  mix-blend-mode: hard-light;
+  opacity: 50%;
+  text-shadow: -1px 0 var(--theme-bgc-color), 0 1px var(--theme-bgc-color),
+    1px 0 var(--theme-bgc-color), 0 -1px var(--theme-bgc-color);
+}
+
+@supports (
+  (text-stroke: 1px var(--theme-bgc-color)) or
+    (-webkit-text-stroke: 1px var(--theme-bgc-color))
+) {
+  .card-label {
+    -webkit-text-stroke: 1px var(--theme-bgc-color);
+    text-stroke: 1px var(--theme-bgc-color);
+    text-shadow: none;
+  }
 }
 
 .card-image {
   width: 100%;
-  border-left: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
 }
