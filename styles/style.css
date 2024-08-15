@@ -91,6 +91,10 @@
   position: relative;
 }
 
+.theme-menu__item {
+  position: relative;
+}
+
 .theme-menu__item:has(:disabled)::before {
   content: "▶";
   position: absolute;
@@ -98,6 +102,25 @@
   height: 14px;
   margin-inline-start: 6px;
   margin-block-start: 1px;
+  animation-name: vector;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.5s;
+}
+
+.theme-menu__button::after {
+  content: "";
+  width: 200px;
+  height: 2px;
+  background-color: red;
+  position: absolute;
+  transform-origin: 0 right;
+  transform: scale(0, 0);
+  transition: transform 0.3s;
+}
+
+.theme-menu__item:has(:focus-visible) .theme-menu__button::after {
+  transform: scale(1, 1);
 }
 
 .theme-menu__item:has(:disabled) {
@@ -110,10 +133,16 @@
   border: none;
   margin-inline-start: 20px;
   text-transform: uppercase;
+  transition: opacity 0.3s;
 }
 
 .theme-menu__button:hover {
   cursor: pointer;
+  opacity: 60%;
+}
+
+.theme-menu__button:focus {
+  outline: none;
   opacity: 60%;
 }
 
@@ -164,6 +193,20 @@
 }
 
 .card-image {
+  display: inline-block;
   width: 100%;
   border-bottom: 2px solid var(--accent-color);
+}
+
+.card-text__wrap {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  gap: 27px;
+}
+
+.card-text {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: var(--card-text-weight);
 }
