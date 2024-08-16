@@ -231,6 +231,25 @@
   margin: 25px;
 }
 
+.card__icon-button {
+  position: relative;
+  border: 2px solid transparent;
+  height: 38px;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--accent-color);
+}
+
+.like-icon {
+  width: 39px;
+  height: 32px;
+}
+
+.sparks {
+  fill-opacity: 0;
+}
+
 .card__like-button {
   padding: 9px;
   min-width: 130px;
@@ -253,7 +272,7 @@
   left: 0;
   transform-origin: 0;
   transform: scaleX(0);
-  transition: transform 0.3s;
+  transition: transform 0.5s ease-in-out;
 }
 
 .button__text {
@@ -295,17 +314,22 @@
   left: 0;
   transform-origin: 0;
   transform: scaleX(0);
-  transition: transform 0.3s;
+  transition: transform 0.5s ease-in-out;
 }
 
 .card__like-button:hover::before,
-.button-save:hover {
+.button-save:hover::before {
   transform: scaleX(1);
 }
 
 .card__like-button:focus-visible,
 .button-save:focus-visible {
   box-shadow: 2px 2px var(--accent-color);
+}
+
+.floppy {
+  mix-blend-mode: difference;
+  fill: var(--mix-mode-color);
 }
 
 .btn-reset:focus {

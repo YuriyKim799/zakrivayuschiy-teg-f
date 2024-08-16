@@ -13,7 +13,8 @@
   --bgc-gradient-start: #007f0c;
   --bgc-gradient-end: #004306;
   --gradient-line: #000;
-  --mix-mode-color: #00cc14; 
+  --mix-mode-color: #00cc14;
+  --sparks: #ff0000;
 }
 
 :root.theme-light {
@@ -25,6 +26,7 @@
   --bgc-gradient-end: #1a1a1a;
   --gradient-line: #d3d3d3;
   --mix-mode-color: #fff;
+  --sparks: #ff0000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,5 +39,6 @@
     --bgc-gradient-end: #004306;
     --gradient-line: #000;
     --mix-mode-color: #00cc14;
+    --sparks: #ff0000;
   }
 }
