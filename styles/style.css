@@ -16,11 +16,17 @@
 
 */
 
+@supports (font-variation-settings: normal) {
+  .page {
+    font-family: var(--main-font), sans-serif;
+  }
+}
+
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
-  font-variation-settings: var(--card-text-weight);
+  font-variation-settings: "wght" var(--card-text-weight);
   font-size: 14px;
   line-height: 14px;
   background-color: var(--theme-bgc-color);
