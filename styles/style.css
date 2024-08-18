@@ -101,8 +101,8 @@
   position: absolute;
   width: 14px;
   height: 14px;
-  /* margin-inline-start: 6px; */
   margin-block-start: 1px;
+  margin-inline-start: 6px;
   animation-name: vector;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
@@ -148,17 +148,21 @@
 }
 
 .content {
+  margin: 0 auto;
+  width: clamp(375px, 80%, 700px);
+}
+
+.cards-list {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  background-color: var(--theme-bgc-color);
-  width: clamp(375px, 80%, 700px);
+  gap: 50px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   border: 2px solid var(--accent-color);
+  background-color: var(--theme-bgc-color);
 }
 
 .card-title {
@@ -171,6 +175,8 @@
 
 .card-image__wrap {
   position: relative;
+  overflow: hidden;
+  border-bottom: 2px solid var(--accent-color);
 }
 
 .card-label {
@@ -178,29 +184,54 @@
   right: 25px;
   color: var(--accent-color);
   font-family: var(--accent-font), sans-serif;
-  text-transform: uppercase;
   position: absolute;
   mix-blend-mode: hard-light;
   opacity: 50%;
   text-shadow: -1px 0 var(--theme-bgc-color), 0 1px var(--theme-bgc-color),
     1px 0 var(--theme-bgc-color), 0 -1px var(--theme-bgc-color);
+  z-index: 1;
+  paint-order: stroke fill;
 }
 
 @supports (
-  (text-stroke: 1px var(--theme-bgc-color)) or
-    (-webkit-text-stroke: 1px var(--theme-bgc-color))
+  (text-stroke: 2px var(--theme-bgc-color)) or
+    (-webkit-text-stroke: 2px var(--theme-bgc-color))
 ) {
   .card-label {
-    -webkit-text-stroke: 1px var(--theme-bgc-color);
-    text-stroke: 1px var(--theme-bgc-color);
+    -webkit-text-stroke: 2px var(--theme-bgc-color);
+    text-stroke: 2px var(--theme-bgc-color);
     text-shadow: none;
   }
 }
 
 .card-image {
-  display: inline-block;
+  display: block;
   width: 100%;
-  border-bottom: 2px solid var(--accent-color);
+  height: 100%;
+}
+
+.filter-contrast {
+  filter: contrast(60%);
+}
+
+.filter-blur {
+  filter: blur(10px);
+}
+
+.filter-grayscale {
+  filter: grayscale(3);
+}
+.filter-saturate {
+  filter: saturate(258%);
+}
+.filter-sepia {
+  filter: sepia(80%);
+}
+.filter-invert {
+  filter: invert(0.8);
+}
+.filter-multiply {
+  filter: sepia(1) invert(1) saturate(150%);
 }
 
 .card-text__wrap {
@@ -293,18 +324,6 @@
   animation: heart 0.3s ease-in 0.1s 1;
 }
 
-@keyframes heart {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 .sparks {
   fill-opacity: 0;
 }
@@ -313,17 +332,6 @@
   animation: sparks 0.3s ease-in 0.3s 1;
 }
 
-@keyframes sparks {
-  0% {
-    fill-opacity: 0;
-  }
-  50% {
-    fill-opacity: 1;
-  }
-  100% {
-    fill-opacity: 0;
-  }
-}
 .card__like-button {
   padding: 9px;
   min-width: 130px;
@@ -373,6 +381,7 @@
   transition: box-shadow 0.3s;
   position: relative;
   cursor: pointer;
+  margin: 50px auto 150px auto;
 }
 
 .button-save::before {
@@ -426,8 +435,7 @@
 }
 
 .modal::backdrop {
-  background-color: rgb(0 0 0 / 0.3);
-  backdrop-filter: blur(7px);
+  background-color: rgb(0 0 0 / 75%);
 }
 
 dialog:is([open]) {
@@ -492,10 +500,12 @@ dialog:is([open]) {
   transition: transform 0.6s ease-in-out;
 }
 
-@media (width <= 375px) {
-  .theme-menu__button {
-  }
+.text-transform {
+  text-transform: uppercase;
+}
 
-  .theme-menu__item:has(:disabled)::before {
+@media (width <= 375px) {
+  .card-label {
+    right: 13px;
   }
 }
