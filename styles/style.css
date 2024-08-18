@@ -363,10 +363,6 @@
   mix-blend-mode: difference;
 }
 
-.card__icon-button:focus-visible {
-  border: 2px solid var(--accent-color);
-}
-
 .button-save {
   display: flex;
   align-items: flex-end;
