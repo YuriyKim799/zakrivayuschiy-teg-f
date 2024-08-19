@@ -15,18 +15,18 @@
 Его разметка также гарантирует работу своего скрипта.
 
 */
-
-@supports (font-variation-settings: normal) {
+/* 
+/* @supports (font-variation-settings: normal) {
   .page {
     font-family: var(--main-font), sans-serif;
   }
-}
+} */
 
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
-  font-variation-settings: "wght" var(--card-text-weight), "wdth" 100, "opsz" 0;
+  /* font-variation-settings: "wght" var(--card-text-weight), "wdth" 100, "opsz" 0; */
   font-size: 14px;
   line-height: 14px;
   background-color: var(--theme-bgc-color);
@@ -54,14 +54,13 @@
 }
 
 .header {
-  margin: 0 auto;
+  margin: 100px auto;
   background-color: var(--theme-bgc-color);
   font-family: var(--accent-font), sans-serif;
   text-transform: uppercase;
-  margin-block-start: 100px;
-  margin-block-end: 100px;
   display: flex;
   flex-direction: column;
+  gap: 24px;
   align-items: center;
   border: 2px solid var(--accent-color);
   width: clamp(375px, 80%, 700px);
@@ -87,10 +86,9 @@
 
 .theme-menu__list {
   display: grid;
-  gap: 14px;
-  margin-block-start: 25px;
-  margin-block-end: 25px;
+  gap: 10px;
   position: relative;
+  padding-block-end: 22px;
 }
 
 .theme-menu__item {
@@ -103,7 +101,7 @@
   width: 14px;
   height: 14px;
   margin-block-start: 1px;
-  margin-inline-start: 6px;
+  margin-inline-start: 7px;
   animation-name: vector;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
@@ -170,7 +168,7 @@
   font-weight: var(--card-title-weight);
   font-size: 18px;
   line-height: 21.78px;
-  padding: 3px 10px 3px 10px;
+  padding: 4px 10px 6px 10px;
   border-bottom: 2px solid var(--accent-color);
 }
 
@@ -262,10 +260,10 @@
 
 .button__wrapper {
   display: flex;
-  gap: 12px;
   align-self: flex-end;
   align-items: center;
-  margin: 25px;
+  margin-block-end: 25px;
+  margin-inline-end: 25px;
 }
 
 .card__icon-button {
@@ -341,7 +339,7 @@
 }
 
 .card__like-button {
-  padding: 9px;
+  padding: 8px;
   min-width: 130px;
 }
 
@@ -376,11 +374,9 @@
 
 .button-save {
   display: flex;
-  align-items: flex-end;
   gap: 8px;
   align-self: center;
   padding: 15px 19px;
-  min-width: 335px;
   margin: 50px auto 103px auto;
 }
 
