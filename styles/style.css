@@ -56,7 +56,7 @@
 .header {
   margin: 0 auto;
   background-color: var(--theme-bgc-color);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), sans-serif;
   text-transform: uppercase;
   margin-block-start: 100px;
   margin-block-end: 100px;
@@ -107,7 +107,7 @@
   animation-name: vector;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-  animation-duration: 0.5s;
+  animation-duration: 1s;
 }
 
 .theme-menu__item:has(:disabled) {
@@ -369,7 +369,7 @@
 
 .button__text {
   color: var(--mix-mode-color);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), sans-serif;
   line-height: 12.6px;
   mix-blend-mode: difference;
 }
@@ -441,7 +441,7 @@ dialog:is([open]) {
   text-transform: uppercase;
   color: var(--accent-color);
   line-height: 21px;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), sans-serif;
   font-size: 14px;
 }
 
