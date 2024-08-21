@@ -15,12 +15,12 @@
 Его разметка также гарантирует работу своего скрипта.
 
 */
-/* 
-/* @supports (font-variation-settings: normal) {
+
+@supports (font-variation-settings: normal) {
   .page {
     font-family: var(--main-font), sans-serif;
   }
-} */
+}
 
 .page {
   min-inline-size: 320px;
